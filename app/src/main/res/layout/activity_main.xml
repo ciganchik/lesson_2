@@ -29,7 +29,7 @@
             android:layout_columnSpan="4"
             android:layout_marginBottom="20dp"
             android:gravity="end"
-            android:text="@string/app_name"
+            android:text="0"
             android:textColor="@color/black"
             android:textSize="50sp" />
 
