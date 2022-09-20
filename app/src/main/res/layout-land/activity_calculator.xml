@@ -4,34 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_wood_board_100120163"
-    android:columnCount="4"
+    android:columnCount="5"
     android:useDefaultMargins="true"
-    tools:context=".MainActivity">
-
+    android:gravity="center"
+    tools:context=".ui.Calculator">
 
     <GridLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:columnCount="4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:columnCount="5"
         android:useDefaultMargins="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="20dp"
-        tools:context=".MainActivity">
+        tools:context=".ui.Calculator">
 
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
+            android:id="@+id/result"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_columnSpan="4"
+            android:layout_columnSpan="5"
+            android:layout_gravity="bottom|fill_horizontal|end"
             android:layout_marginBottom="20dp"
             android:gravity="end"
-            android:text="0"
+            android:hint="0"
             android:textColor="@color/black"
             android:textSize="50sp" />
+
+        <Button
+            android:id="@+id/button_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/usual_btn"
+            android:text="@string/btn_6"
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/button_7"
@@ -49,6 +57,7 @@
             android:text="@string/btn_8"
             android:textSize="25sp" />
 
+
         <Button
             android:id="@+id/button_9"
             android:layout_width="wrap_content"
@@ -58,44 +67,13 @@
             android:textSize="25sp" />
 
         <Button
-            android:id="@+id/divw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/main_btn"
-            android:text="@string/dive"
-            android:textSize="25sp" />
-
-        <Button
-            android:id="@+id/button_4"
+            android:id="@+id/button_0"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/usual_btn"
-            android:text="@string/btn_4"
+            android:text="@string/btn_0"
             android:textSize="25sp" />
 
-        <Button
-            android:id="@+id/button_5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/usual_btn"
-            android:text="@string/btn_5"
-            android:textSize="25sp" />
-
-        <Button
-            android:id="@+id/button_6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/usual_btn"
-            android:text="@string/btn_6"
-            android:textSize="25sp" />
-
-        <Button
-            android:id="@+id/multiply"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/main_btn"
-            android:text="@string/mult"
-            android:textSize="25sp" />
 
         <Button
             android:id="@+id/button_1"
@@ -121,23 +99,23 @@
             android:text="@string/btn_3"
             android:textSize="25sp" />
 
+
         <Button
-            android:id="@+id/minus"
+            android:id="@+id/button_4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/main_btn"
-            android:text="@string/minus"
+            android:backgroundTint="@color/usual_btn"
+            android:text="@string/btn_4"
             android:textSize="25sp" />
 
         <Button
-            android:id="@+id/button_0"
+            android:id="@+id/button_5"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_columnSpan="2"
-            android:layout_gravity="fill_horizontal"
             android:backgroundTint="@color/usual_btn"
-            android:text="@string/btn_0"
+            android:text="@string/btn_5"
             android:textSize="25sp" />
+
 
         <Button
             android:id="@+id/button_dot"
@@ -147,6 +125,7 @@
             android:text="@string/btn_dot"
             android:textSize="25sp" />
 
+
         <Button
             android:id="@+id/plus"
             android:layout_width="wrap_content"
@@ -154,5 +133,51 @@
             android:backgroundTint="@color/main_btn"
             android:text="@string/plus"
             android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/main_btn"
+            android:text="@string/minus"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/multiply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/main_btn"
+            android:text="@string/mult"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/div"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/main_btn"
+            android:text="@string/dive"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/clear_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="2"
+            android:layout_gravity="fill_horizontal"
+            android:backgroundTint="@color/usual_btn"
+            android:text="@string/clear"
+            android:textSize="25sp" />
+
+        <Button
+            android:id="@+id/def"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_columnSpan="3"
+            android:layout_gravity="fill_horizontal"
+            android:backgroundTint="@color/main_btn"
+            android:text="@string/def"
+            android:textSize="25sp" />
+
+
     </GridLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
