@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
 
 public class CalculatorPresenter implements Serializable {
 
-    private DecimalFormat format = new DecimalFormat("#.######");
+    private DecimalFormat format = new DecimalFormat("#.#####");
 
     private CalculaterView view;
     private Calculator calculator;
